@@ -1,0 +1,11 @@
+{
+	"conventionalCommits.scopes": [
+		"db",
+		"db",
+		"utils",
+		"repositories",
+		"useCase",
+		"controller",
+		"routes"
+	]
+}
