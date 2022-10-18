@@ -11,6 +11,8 @@ type ICarController interface {
 	CreateCar(res http.ResponseWriter, req *http.Request)
 	GetCar(res http.ResponseWriter, req *http.Request)
 	GetAllCars(res http.ResponseWriter, req *http.Request)
+	UpdateCar(res http.ResponseWriter, req *http.Request)
+	DeleteCar(res http.ResponseWriter, req *http.Request)
 }
 
 type carController struct {
