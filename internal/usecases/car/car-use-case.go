@@ -13,6 +13,8 @@ type ICarUseCase interface {
 	CreateCar(ctx context.Context, car entity.ICar) (*entity.ICar, *utils.CustomError)
 	GetCar(ctx context.Context, id string) (*entity.ICar, *utils.CustomError)
 	GetAllCars(ctx context.Context) (*[]entity.ICar, *utils.CustomError)
+	UpdateCar(ctx context.Context, id string, car entity.ICar) (*entity.ICar, *utils.CustomError)
+	DeleteCar(ctx context.Context, id string) *utils.CustomError
 }
 
 type carUseCase struct {
