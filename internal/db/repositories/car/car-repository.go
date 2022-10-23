@@ -10,7 +10,7 @@ import (
 )
 
 type ICarRepository interface {
-	CreateCar(ctx context.Context, car entity.ICar) (*entity.ICar, *utils.CustomError)
+	CreateCar(ctx context.Context, car *entity.ICar) (*entity.ICar, *utils.CustomError)
 	GetCar(ctx context.Context, id primitive.ObjectID) (*entity.ICar, *utils.CustomError)
 	GetAllCars(ctx context.Context) (*[]entity.ICar, *utils.CustomError)
 	UpdateCar(ctx context.Context, id primitive.ObjectID, car entity.ICar) (*entity.ICar, *utils.CustomError)

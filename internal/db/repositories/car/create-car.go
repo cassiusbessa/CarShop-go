@@ -9,16 +9,12 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-func (c *carRepo) CreateCar(ctx context.Context, car entity.ICar) (*entity.ICar, *utils.CustomError) {
+func (c *carRepo) CreateCar(ctx context.Context, car *entity.ICar) (*entity.ICar, *utils.CustomError) {
 	car.Id = primitive.NewObjectID()
-	err := car.Validate()
-	if err != nil {
-		return &entity.ICar{}, utils.NewError(http.StatusBadRequest, err.Error(), "repo-create-car", err)
-	}
-	_, err = c.collection.InsertOne(ctx, car)
+	_, err := c.collection.InsertOne(ctx, car)
 	if err != nil {
 		return &entity.ICar{},
 			utils.NewError(http.StatusInternalServerError, "db insert error", "repo-create-car", err)
 	}
-	return &car, nil
+	return car, nil
 }
