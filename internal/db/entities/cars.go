@@ -6,7 +6,7 @@ import (
 )
 
 type ICar struct {
-	Id       primitive.ObjectID `json:"Id,omitempty" bson:"_id,omitempty"`
+	Id       primitive.ObjectID `json:"id,omitempty" bson:"_id,omitempty"`
 	Model    string             `json:"model,omitempty" bson:"model,omitempty" validate:"required"`
 	Year     int                `json:"year,omitempty" bson:"year,omitempty" validate:"required"`
 	Color    string             `json:"color,omitempty" bson:"color,omitempty" validate:"required"`
