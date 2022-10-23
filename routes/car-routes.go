@@ -7,7 +7,7 @@ import (
 )
 
 func CarRoutes() *mux.Router {
-	carCollection := connection.NewCollection("CarShop", "cars")
+	carCollection := connection.NewCollection("MONGODB_URI", "CarShop", "cars")
 	carCtrl := car_controller.New(carCollection)
 
 	router := mux.NewRouter()
