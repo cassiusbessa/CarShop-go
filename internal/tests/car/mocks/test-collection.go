@@ -12,11 +12,6 @@ func newCollection(db, collection string) *mongo.Collection {
 	if err != nil {
 		panic(err)
 	}
-	// defer func() {
-	// 	if err := client.Disconnect(context.TODO()); err != nil {
-	// 		panic(err)
-	// 	}
-	// }()
 	return client.Database(db).Collection(collection)
 }
 
