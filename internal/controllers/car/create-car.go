@@ -19,7 +19,7 @@ func (c *carController) CreateCar(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 	_, error := c.carUseCase.CreateCar(context.Background(), car)
-	if err != nil {
+	if error != nil {
 		utils.SendError(error, res)
 		return
 	}
