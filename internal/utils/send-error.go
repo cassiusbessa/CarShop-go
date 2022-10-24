@@ -6,7 +6,7 @@ import (
 )
 
 func SendError(err *CustomError, res http.ResponseWriter) {
+	fmt.Println("error: " + err.Err.Error() + " in " + err.Op)
 	res.WriteHeader(err.Code)
-	fmt.Println(err.Err.Error(), err.Op)
-	res.Write([]byte(`{"message": "` + err.Error() + `"}`))
+	res.Write([]byte(`{"message": "` + err.Message + `"}`))
 }
