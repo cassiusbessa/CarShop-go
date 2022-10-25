@@ -14,7 +14,7 @@ func (c *carRepo) GetCar(ctx context.Context, id primitive.ObjectID) (*entity.IC
 	err := c.collection.FindOne(ctx, primitive.M{"_id": id}).Decode(&car)
 	if err != nil {
 		return car,
-			utils.NewError(http.StatusInternalServerError, "db find error", "repo-get-car", err)
+			utils.NewError(http.StatusInternalServerError, "not car founded", "repo-get-car", err)
 	}
 	return car, nil
 }
