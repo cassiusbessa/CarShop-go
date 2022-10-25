@@ -26,10 +26,10 @@ func TestGetAllCarsRepository(t *testing.T) {
 		{
 			describe: "Should create a car",
 			arg1:     mocks.Car,
-			name:     "CreateCar",
+			name:     "GetAllCars",
 			want:     &mocks.Seeds,
 			wantErr:  nil,
-			msg:      "Car created successfully",
+			msg:      "Return all cars",
 		},
 	}
 
