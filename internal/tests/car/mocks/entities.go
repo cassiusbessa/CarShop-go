@@ -15,6 +15,12 @@ var Car = entity.ICar{
 	SeatsQty: 5,
 }
 
+var UpdateCar = entity.ICar{
+	Model: "Fiesta",
+	Year:  2014,
+	Color: "Silver",
+}
+
 var ErrorCar = entity.ICar{
 	Model:    "Gol",
 	Year:     2010,
