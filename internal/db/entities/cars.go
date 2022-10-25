@@ -24,3 +24,12 @@ func (c *ICar) Validate() error {
 	}
 	return nil
 }
+
+func (c *ICar) UpdateValidate(fields ...string) error {
+	valid := validator.New()
+	err := valid.StructPartial(c, fields...)
+	if err != nil {
+		return err
+	}
+	return nil
+}
