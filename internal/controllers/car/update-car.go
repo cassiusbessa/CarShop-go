@@ -21,7 +21,7 @@ func (c *carController) UpdateCar(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 	car, error := c.carUseCase.UpdateCar(context.Background(), param["id"], *car)
-	if err != nil {
+	if error != nil {
 		utils.SendError(error, res)
 		return
 	}
