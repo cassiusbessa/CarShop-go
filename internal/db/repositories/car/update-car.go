@@ -15,7 +15,7 @@ func (c *carRepo) UpdateCar(ctx context.Context, id primitive.ObjectID, car enti
 	r := c.collection.FindOneAndUpdate(context.Background(), bson.M{"_id": id}, bson.M{"$set": car}, options.FindOneAndUpdate().SetReturnDocument(1))
 	if r.Err() != nil {
 		return &entity.ICar{},
-			utils.NewError(http.StatusInternalServerError, "db update error", "repo-update-car", r.Err())
+			utils.NewError(http.StatusNotFound, "not car founded", "repo-update-car", r.Err())
 	}
 	r.Decode(&car)
 	return &car, nil
